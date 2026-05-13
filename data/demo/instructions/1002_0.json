@@ -1,0 +1,14 @@
+{
+  "person_id": 1002,
+  "window_index": 0,
+  "window_token_count": 51,
+  "window_percent_full": 100,
+  "start_date": "2024-03-05",
+  "end_date": "2024-05-01",
+  "response_data": [
+    {
+      "instruction": "What changed between the diabetes follow-up visits, and what counseling remained relevant?",
+      "response": "In March 2024, the patient's A1c was 8.4 and metformin adherence was inconsistent. By May 2024, medication adherence had improved and fasting glucose values were mostly 120-150 mg/dL. Diet and exercise counseling remained relevant."
+    }
+  ]
+}

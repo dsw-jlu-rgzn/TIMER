@@ -1,0 +1,12 @@
+[
+  {
+    "instruction": "Summarize the patient's cardiovascular timeline and identify the most recent management plan.",
+    "input": "<patient><visit start=\"01/10/2024\"><note>Patient reports intermittent chest tightness after exercise. ECG without acute ischemic changes. Advised follow-up and lipid panel.</note></visit><visit start=\"02/20/2024\"><note>Lipid panel elevated. Started atorvastatin 20 mg daily. No chest pain at rest.</note></visit><visit start=\"04/15/2024\"><note>Symptoms improved. LDL decreased. Continue statin and lifestyle modification.</note></visit></patient>",
+    "output": "The patient initially reported exercise-associated chest tightness in January 2024. Testing did not show acute ischemia, and later lipid testing was elevated. Atorvastatin 20 mg daily was started in February. By April, symptoms and LDL had improved, so the plan was to continue statin therapy and lifestyle modification."
+  },
+  {
+    "instruction": "What changed between the diabetes follow-up visits, and what counseling remained relevant?",
+    "input": "<patient><visit start=\"03/05/2024\"><note>Type 2 diabetes follow-up. A1c 8.4. Metformin adherence inconsistent.</note></visit><visit start=\"05/01/2024\"><note>Patient improved medication adherence. Home fasting glucose mostly 120-150 mg/dL. Discussed diet and exercise.</note></visit></patient>",
+    "output": "In March 2024, the patient's A1c was 8.4 and metformin adherence was inconsistent. By May 2024, medication adherence had improved and fasting glucose values were mostly 120-150 mg/dL. Diet and exercise counseling remained relevant."
+  }
+]

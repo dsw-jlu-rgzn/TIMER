@@ -3,10 +3,9 @@ from google.cloud import bigquery
 import pandas as pd
 from utils import setup_bigquery_client
 import pandas_gbq
-pandas_gbq
 import os
 
-def sample_tuples(sample_size, sampling_method, client, top_specialty_num=200, project_id, dataset_id=):
+def sample_tuples(sample_size, sampling_method, client, project_id, dataset_id, top_specialty_num=200):
     if sampling_method == "random":
         query = f"""
         SELECT 
@@ -86,12 +85,13 @@ def main(args):
     client = setup_bigquery_client()
     
     print(f"Sampling {args.sample_n} patients using method: {args.sampling_method}")
-    if args.sampling_method == "random":
-        sampled_data = sample_tuples(args.sample_n, "random", client)
-    elif args.sampling_method == "specialty_stratified":
-        sampled_data = sample_tuples(args.sample_n, "specialty_stratified", client)
-    else:
-        raise ValueError(f"Unknown sampling method: {args.sampling_method}")
+    sampled_data = sample_tuples(
+        args.sample_n,
+        args.sampling_method,
+        client,
+        args.project_id,
+        args.dataset_id,
+    )
     
     print(f"Number of sampled data: {len(sampled_data)}")
     print(f"Saving data to: {args.path_to_output_file}")
@@ -100,7 +100,8 @@ def main(args):
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description="Sample patients from  OMOP population.")
-    parser.add_argument("--path_to_extract_or_dataset", type=str, help="BigQuery dataset path")
+    parser.add_argument("--project_id", type=str, required=True, help="Google Cloud project ID")
+    parser.add_argument("--dataset_id", type=str, required=True, help="BigQuery dataset ID containing OMOP tables")
     parser.add_argument("--path_to_output_file", type=str)
     parser.add_argument("--sampling_method", type=str, default="random", choices=["random", "specialty_stratified"], help="Sampling method")
     parser.add_argument("--sample_n", type=int, required=True, help="Number of patients to sample")

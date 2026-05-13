@@ -1,0 +1,14 @@
+{
+  "person_id": 1001,
+  "window_index": 0,
+  "window_token_count": 82,
+  "window_percent_full": 100,
+  "start_date": "2024-01-10",
+  "end_date": "2024-04-15",
+  "response_data": [
+    {
+      "instruction": "Summarize the patient's cardiovascular timeline and identify the most recent management plan.",
+      "response": "The patient initially reported exercise-associated chest tightness in January 2024. Testing did not show acute ischemia, and later lipid testing was elevated. Atorvastatin 20 mg daily was started in February. By April, symptoms and LDL had improved, so the plan was to continue statin therapy and lifestyle modification."
+    }
+  ]
+}

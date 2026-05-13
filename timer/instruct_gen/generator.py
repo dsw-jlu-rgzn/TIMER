@@ -271,7 +271,7 @@ if __name__ == "__main__":
     parser.add_argument("--location", type=str, default="us-central1", help="Google Cloud location")
     parser.add_argument("--model_name", type=str)
     parser.add_argument("--max_samples", type=int)
-    parser.add_argument("--max_concurrent_calls")
+    parser.add_argument("--max_concurrent_calls", type=int, default=1)
     parser.add_argument("--csv_file")
     parser.add_argument("--dataset_id")
     parser.add_argument("--table_id", type=str)
